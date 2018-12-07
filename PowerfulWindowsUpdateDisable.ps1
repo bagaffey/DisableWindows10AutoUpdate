@@ -39,4 +39,4 @@ If (Get-ScheduledTask -TaskPath "\Microsoft\Windows\WaaSMedic\") {
 # Set-Service WaaSMedicSvc -StartupType Disabled
 
 Write-Output "Windows Automatic Updates Disable script finished executing."
-Read-Host "Press any key to continue. . ."
+Read-Host "Press enter to continue. . ."
