@@ -38,5 +38,11 @@ If (Get-ScheduledTask -TaskPath "\Microsoft\Windows\WaaSMedic\") {
 # Stop-Service WaaSMedicSvc
 # Set-Service WaaSMedicSvc -StartupType Disabled
 
+# Shut down notification and action center.
+Set-ItemProperty -Path HKCU:\Software\Policies\Microsoft\Windows\Explorer\ -Name DisableNotificationCenter -Value 1
+
+# Disable balloon tips
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ -Name "Enable BalloonTips" -Value 0
+
 Write-Output "Windows Automatic Updates Disable script finished executing."
 Read-Host "Press enter to continue. . ."
